@@ -1,0 +1,34 @@
+{
+  "name": "skora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --mode=production",
+    "watch": "./node_modules/.bin/webpack --mode=production --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kserin/skora.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kserin/skora/issues"
+  },
+  "homepage": "https://github.com/kserin/skora#readme",
+  "dependencies": {
+    "bulma": "^0.9.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.2",
+    "html-webpack-plugin": "^4.4.1",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.3",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
