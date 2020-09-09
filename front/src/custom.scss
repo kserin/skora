@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+// Own colors
+$skora_blue: #19647E;
+$skora_lightblue: #DFF3E4;
+$skora_orange: #BA3F1D;
+$skora_yellow: #E6AF2E;
+$skora_black: #0C0C0C;
+$skora_green: #697a21;
+
+// Override colors
+$primary: $skora_blue;
+$link: $skora_blue;
+$info: $skora_blue;
+$success: $skora_green;
+$warning: $skora_yellow;
+$danger: $skora_orange;
+$dark: $skora_black;
+$text: $skora_black;
+
+@import "../node_modules/bulma/bulma.sass";

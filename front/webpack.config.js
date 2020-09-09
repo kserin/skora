@@ -1,10 +1,15 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "src/index.html",
   filename: "index.html"
+});
+
+const cssExtractPlugin = new MiniCssExtractPlugin({
+  filename: '[name].css'
 });
 
 const cleanPlugin = new CleanWebpackPlugin();
@@ -19,8 +24,8 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
       }
     ]
   },
@@ -31,5 +36,5 @@ module.exports = {
     filename: "bundle.[chunkhash].js",
     path: path.resolve(__dirname, "dist")
   },
-  plugins: [cleanPlugin, htmlPlugin]
+  plugins: [cleanPlugin, htmlPlugin, cssExtractPlugin]
 }
