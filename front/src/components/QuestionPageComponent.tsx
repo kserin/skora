@@ -1,6 +1,6 @@
 import React from "react";
 import { QuestionCrumbComponent } from "./QuestionCrumbComponent";
-import { PointsComponent } from "./PointsComponent";
+import { ScoreComponent } from "./PointsComponent";
 import { QuestionComponent } from "./QuestionComponent";
 
 export class QuestionPageComponent extends React.Component<{}, {}> {
@@ -23,7 +23,7 @@ export class QuestionPageComponent extends React.Component<{}, {}> {
             </div>
             <div className="level-right">
               <div className="level-item">
-                <PointsComponent points={137} />
+                <ScoreComponent points={137} />
               </div>
             </div>
           </nav>

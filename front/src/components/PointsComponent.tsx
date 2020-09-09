@@ -1,10 +1,10 @@
 import React from "react";
 
-export interface PointsComponentProps {
+export interface ScoreComponentProps {
   points: number;
 }
 
-export class PointsComponent extends React.Component<PointsComponentProps, {}> {
+export class ScoreComponent extends React.Component<ScoreComponentProps, {}> {
   public render() {
     return (
       <span
