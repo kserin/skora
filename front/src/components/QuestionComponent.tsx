@@ -22,7 +22,7 @@ export class QuestionComponent extends React.Component<QuestionComponentProps, {
       </div>,
       <div className="answers columns is-centered">
         {answers}
-      </div>
+      </div>,
     ];
   }
 }

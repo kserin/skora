@@ -1,28 +1,62 @@
+import { EventSubscription } from "fbemitter";
 import React from "react";
-import { GirlsListComponent } from "./GirlsListComponent";
+import GirlsApi from "../api/GirlsApi";
 import { Girl } from "../domain/Girl";
+import GirlsListStore from "../stores/GirlsListStore";
+import { GirlsListComponent } from "./GirlsListComponent";
+import { SpinnerComponent } from "./SpinnerComponent";
 
-export class GirlsListPageComponent extends React.Component<{}, {}> {
+interface GirlsListPageComponentState {
+  error?: string;
+  girls: Girl[];
+  loading: boolean;
+}
+
+export class GirlsListPageComponent extends React.Component<{}, GirlsListPageComponentState> {
+  private subscription: EventSubscription | undefined;
+
+  constructor(props: {}) {
+    super(props);
+
+    this.state = {
+      girls: [],
+      loading: true,
+    };
+  }
+
   public render() {
-    const girls: Girl[] = [
-      {
-        name: "Tricia",
-        score: 125,
-      },
-      {
-        name: "Charline",
-        score: 78,
-      },
-      {
-        name: "Manon",
-        score: -5,
-      }
-    ];
+    if (this.state.loading) {
+      return (
+        <div className="container-fluid has-text-centered">
+           <SpinnerComponent />
+         </div>
+      );
+    } else {
+      return (
+        <div className="container-fluid">
+          <GirlsListComponent girls={this.state.girls} />
+        </div>
+      );
+    }
+  }
 
-    return (
-      <div className="container-fluid">
-        <GirlsListComponent girls={girls} />
-      </div>
-    );
+  public componentDidMount() {
+    this.subscription = GirlsListStore.addListener(this.onStoreChange.bind(this));
+    GirlsApi.list();
+  }
+
+  public componentWillUnmount() {
+    if (this.subscription) {
+      this.subscription.remove();
+    }
+  }
+
+  private onStoreChange() {
+    const data = GirlsListStore.getState();
+    this.setState({
+      error: data.error,
+      girls: data.girls,
+      loading: data.loading,
+    });
   }
 }

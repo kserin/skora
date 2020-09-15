@@ -1,10 +1,9 @@
-import "./custom.scss";
-import { createBrowserHistory, History } from "history";
-import ReactDOM from "react-dom";
-import { Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import React from "react";
-import { QuestionPageComponent } from "./components/QuestionPageComponent";
+import ReactDOM from "react-dom";
+import { Route, Router, Switch } from "react-router-dom";
 import { GirlsListPageComponent as GirlsListPageComponent } from "./components/GirlsListPage";
+import "./custom.scss";
 
 const history = createBrowserHistory();
 
@@ -14,5 +13,5 @@ ReactDOM.render(
       <Route exact path="/" children={<GirlsListPageComponent />} />
     </Switch>
   </Router>,
-  document.getElementById("main")
+  document.getElementById("main"),
 );

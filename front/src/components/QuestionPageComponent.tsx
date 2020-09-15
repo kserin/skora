@@ -1,7 +1,7 @@
 import React from "react";
-import { QuestionCrumbComponent } from "./QuestionCrumbComponent";
 import { ScoreComponent } from "./PointsComponent";
 import { QuestionComponent } from "./QuestionComponent";
+import { QuestionCrumbComponent } from "./QuestionCrumbComponent";
 
 export class QuestionPageComponent extends React.Component<{}, {}> {
   public render() {
@@ -9,7 +9,7 @@ export class QuestionPageComponent extends React.Component<{}, {}> {
       "I don't know",
       "Can you repeat the question ?",
       "How are you ?",
-      "No question"
+      "No question",
     ];
 
     return (
