@@ -1,0 +1,26 @@
+[
+  {
+    "answers": [],
+    "category": "Physique",
+    "question": "Fume-t-elle ?",
+    "severity": "MAJOR"
+  },
+  {
+    "answers": [],
+    "category": "Sexe",
+    "question": "Pratique-t-elle la fellation ?",
+    "severity": "BLOCKING"
+  },
+  {
+    "answers": [],
+    "category": "Look",
+    "question": "Quelle tenue de nuit ?",
+    "severity": "ANECDOTIC"
+  },
+  {
+    "answers": [],
+    "category": "Situation",
+    "question": "Quel est son niveau d'études",
+    "severity": "MINOR"
+  }
+]

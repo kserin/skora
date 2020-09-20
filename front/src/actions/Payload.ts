@@ -1,4 +1,5 @@
 import { Girl } from "../domain/Girl";
+import { Question } from "../domain/Question";
 import { Action } from "./Action";
 
 export interface Payload {
@@ -16,3 +17,5 @@ interface ApiResultPayload<T> extends Payload {
 }
 
 export type GirlsPayload = ApiResultPayload<Girl[]>;
+
+export type QuestionsPayload = ApiResultPayload<Question[]>;

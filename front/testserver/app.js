@@ -13,13 +13,17 @@ app.get("/api/girls", (req, res) => {
   delayedResponse(res, "testserver/girls.json");
 });
 
+app.get("/api/questions", (req, res) => {
+  delayedResponse(res, "testserver/questions.json");
+});
+
 app.get(/.*\.(js|css|html)$/, (req, res) => {
   const pathParts = req.path.split("/");
   console.log(pathParts);
   res.status(200).sendFile(path.resolve(`dist/${pathParts[pathParts.length - 1]}`));
 });
 
-app.get("/", (req, res) => {
+app.get(/.*/, (req, res) => {
   res.status(200).sendFile(path.resolve("dist/index.html"));
 });
 

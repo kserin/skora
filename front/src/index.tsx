@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Route, Router, Switch } from "react-router-dom";
 import { GirlsListPageComponent as GirlsListPageComponent } from "./components/GirlsListPage";
 import { NavbarComponent } from "./components/NavbarComponent";
-import { QuestionPageComponent } from "./components/QuestionPageComponent";
+import { QuestionsListPageComponent } from "./components/QuestionsListPageComponent";
 import "./custom.scss";
 
 const history = createBrowserHistory();
@@ -17,7 +17,7 @@ ReactDOM.render(
     <section className="section" id="main">
       <Switch>
         <Route exact path="/" children={<GirlsListPageComponent />} />
-        <Route exact path="/questions" children={<QuestionPageComponent />} />
+        <Route exact path="/questions" children={<QuestionsListPageComponent />} />
       </Switch>
     </section>
   </Router>,
