@@ -1,5 +1,6 @@
 import { EventSubscription } from "fbemitter";
 import React from "react";
+import { GirlsActions } from "../actions/GirlsActions";
 import GirlsApi from "../api/GirlsApi";
 import { Girl } from "../domain/Girl";
 import GirlsListStore from "../stores/GirlsListStore";
@@ -42,6 +43,7 @@ export class GirlsListPageComponent extends React.Component<{}, GirlsListPageCom
 
   public componentDidMount() {
     this.subscription = GirlsListStore.addListener(this.onStoreChange.bind(this));
+    new GirlsActions().openListPage();
     GirlsApi.list();
   }
 
