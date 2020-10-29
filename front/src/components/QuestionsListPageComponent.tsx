@@ -2,6 +2,7 @@ import { mdiPlus } from "@mdi/js";
 import Icon from "@mdi/react";
 import { EventSubscription } from "fbemitter";
 import React from "react";
+import { Link } from "react-router-dom";
 import { QuestionsAction } from "../actions/QuestionsAction";
 import QuestionsApi from "../api/QuestionsApi";
 import { Question } from "../domain/Question";
@@ -38,9 +39,9 @@ export class QuestionsListPageComponent extends React.Component<{}, QuestionsLis
       return (
         <div className="container-fluid">
           <QuestionsListComponent questions={this.state.questions} />
-          <a href="#" className="button is-floating is-primary" style={{fontSize: "unset"}}>
+          <Link to="/add" className="button is-floating is-primary" style={{fontSize: "unset"}}>
             <Icon path={mdiPlus} />
-          </a>
+          </Link>
         </div>
       );
     }

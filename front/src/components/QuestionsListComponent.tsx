@@ -1,7 +1,6 @@
-import { mdiChevronDown, mdiChevronTripleDown, mdiChevronTripleUp, mdiChevronUp } from "@mdi/js";
-import Icon from "@mdi/react";
 import React from "react";
 import { Question, QuestionSeverity } from "../domain/Question";
+import { SeverityIconComponent } from "./SeverityIconComponent";
 
 export interface QuestionsListComponentProps {
   questions: Question[];
@@ -37,7 +36,7 @@ export class QuestionsListComponent extends React.Component<QuestionsListCompone
           </div>
           <div className="level-right">
             <div className="level-item is-size-6 is-hidden-touch">{this.severityLabel(question.severity)}</div>
-            <Icon path={this.severityIcon(question.severity)} size={1} className={this.severityClass(question.severity)} />
+            <SeverityIconComponent severity={question.severity} />
           </div>
         </div>
       </a>);
@@ -60,30 +59,6 @@ export class QuestionsListComponent extends React.Component<QuestionsListCompone
         return "Majeur";
       case QuestionSeverity.BLOCKING:
         return "Bloquant";
-    }
-  }
-
-  private severityIcon(severity: QuestionSeverity): string {
-    switch (severity) {
-      case QuestionSeverity.ANECDOTIC:
-        return mdiChevronTripleDown;
-      case QuestionSeverity.MINOR:
-        return mdiChevronDown;
-      case QuestionSeverity.MAJOR:
-        return mdiChevronUp;
-      case QuestionSeverity.BLOCKING:
-        return mdiChevronTripleUp;
-    }
-  }
-
-  private severityClass(severity: QuestionSeverity): string {
-    switch (severity) {
-      case QuestionSeverity.ANECDOTIC:
-      case QuestionSeverity.MINOR:
-        return "has-text-info";
-      case QuestionSeverity.MAJOR:
-      case QuestionSeverity.BLOCKING:
-        return "has-text-danger";
     }
   }
 

@@ -7,6 +7,10 @@ export interface Payload {
   data: any;
 }
 
+export interface StringPayload extends Payload {
+  data: string;
+}
+
 interface ApiResult<T> {
   content: T;
   error?: string;
@@ -19,3 +23,4 @@ interface ApiResultPayload<T> extends Payload {
 export type GirlsPayload = ApiResultPayload<Girl[]>;
 
 export type QuestionsPayload = ApiResultPayload<Question[]>;
+

@@ -22,3 +22,12 @@ $text-strong: $skora_black;
 
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma-floating-button/dist/css/bulma-floating-button.sass";
+
+.form-info {
+  margin-left: $size-6;
+  margin-bottom: -6px;
+}
+
+.modal-card-foot {
+  padding: 10px;
+}
